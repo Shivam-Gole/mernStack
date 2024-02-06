@@ -35,11 +35,11 @@ class Rectangle : Shape
 
       { 
 
-         Console.WriteLine("Drawing a rectangle");         // Code to draw a rectangle on the canvas     } 
+         Console.WriteLine("Drawing a rectangle");           } 
 
 } 
 
-// Concrete class representing a circle ![](Aspose.Words.9d49eea9-6e09-4666-8acb-645a975775a5.002.png)
+// Concrete class representing a circle 
 
 class Circle : Shape 
 
@@ -49,7 +49,7 @@ class Circle : Shape
 
       { 
 
-          Console.WriteLine("Drawing a circle");         // Code to draw a circle on the canvas     } 
+          Console.WriteLine("Drawing a circle");  } 
 
 } 
 
@@ -71,7 +71,7 @@ class Circle : Shape
 
                   Console.WriteLine("Drawing a rectangle"); 
 
-                  // Code to draw a rectangle on the canvas ![](Aspose.Words.9d49eea9-6e09-4666-8acb-645a975775a5.003.png)
+                  // Code to draw a rectangle on the canvas
 
               } 
 
@@ -98,17 +98,18 @@ class Program
       static void Main(string[] args) 
 
       { 
+          Rectangle rectangle = new Rectangle();
+          Circle circle = new Circle(); 
 
-          // Create instances of different shapes         Rectangle rectangle = new Rectangle();         Circle circle = new Circle(); 
+           rectangle.Draw();
+           circle.Draw(); 
 
-// Draw individual shapes rectangle.Draw(); circle.Draw(); 
+           // Draw all shapes on the canvas (violating OCP)
+           List<Shape> shapes = new List<Shape> { rectangle, circle };
+           Drawing.DrawAllShapes(shapes); 
 
-// Draw all shapes on the canvas (violating OCP) List<Shape> shapes = new List<Shape> { rectangle, circle }; Drawing.DrawAllShapes(shapes); 
-
-          Console.ReadLine(); ![ref1]
-
+          Console.ReadLine(); 
       } 
-
 } 
 ```
 In the above code the **drawAllShapes()** function explicitly checks the type of each shape using dynamic\_cast and then draws the shape accordingly. If a new shape is added, the **drawAllShapes()** function must be modified to include a case for that shape, violating the Open-Closed Principle. 
@@ -149,7 +150,7 @@ class Rectangle : Shape
 
           Console.WriteLine("Drawing a rectangle");         // Code to draw a rectangle on the canvas 
 
-      } ![](Aspose.Words.9d49eea9-6e09-4666-8acb-645a975775a5.006.png)} 
+      } 
 
 // Concrete class representing a circle 
 
@@ -219,7 +220,8 @@ triangle.Draw(); // New shape drawn without modifying existing code ![ref1]
 
           // Draw all shapes on the canvas (adhering to OCP) 
 
-          List<Shape> shapes = new List<Shape> { rectangle, circle, triangle }; ![](Aspose.Words.9d49eea9-6e09-4666-8acb-645a975775a5.008.png)// Updated to include triangle 
+          List<Shape> shapes = new List<Shape> { rectangle, circle, triangle };
+       // Updated to include triangle 
 
           Drawing.DrawAllShapes(shapes); 
 
