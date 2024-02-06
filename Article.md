@@ -1,4 +1,4 @@
-**Title : *Understanding the Open-Closed Principle: Writing Clean, Maintainable, and Scalable Code***
+***Title : Understanding the Open-Closed Principle: Writing Clean, Maintainable, and Scalable Code***
 
 **Introduction:** 
 
@@ -128,7 +128,7 @@ We should go for **EXTENSION** instead of **MODIFICATION** as per the Open-Close
 To adhere to the **Open-Closed Principle (OCP)**, we need to modify the code to ensure that adding new shapes does not require modifying existing code. We can achieve this by maintaining polymorphic behavior and using dynamic dispatch to call the draw() method on each shape. 
 
 ```c#
-using System; ![](Aspose.Words.9d49eea9-6e09-4666-8acb-645a975775a5.005.png)
+using System; 
 
 using System.Collections.Generic; 
 
@@ -148,7 +148,7 @@ class Rectangle : Shape
 
       { 
 
-          Console.WriteLine("Drawing a rectangle");         // Code to draw a rectangle on the canvas 
+          Console.WriteLine("Drawing a rectangle");         
 
       } 
 
@@ -162,7 +162,7 @@ class Circle : Shape
 
       { 
 
-          Console.WriteLine("Drawing a circle");         // Code to draw a circle on the canvas     } 
+          Console.WriteLine("Drawing a circle");          } 
 
 } 
 
@@ -174,7 +174,7 @@ class Circle : Shape
 
      { 
 
-          Console.WriteLine("Drawing a triangle");         // Code to draw a triangle on the canvas     } 
+          Console.WriteLine("Drawing a triangle");       } 
 
 } 
 
@@ -238,5 +238,3 @@ This C# code mirrors the functionality of the given C++ code, including the addi
 The Open-Closed Principle encourages developers to design software components that are resilient to change and easily extensible. By adhering to this principle, we can build software systems that are more modular, maintainable, and adaptable to evolving requirements. By employing abstraction, inheritance, and polymorphism, we can achieve designs that allow for easy extension while minimizing the need for modification, thus promoting code reuse and reducing the risk of introducing bugs. 
 
 In summary, understanding and applying the Open-Closed Principle is essential for writing clean, flexible, and scalable code in modern software development practices. By embracing this principle, developers can build robust and future-proof software systems that stand the test of time. 
-
-[ref1]: Aspose.Words.9d49eea9-6e09-4666-8acb-645a975775a5.004.png
